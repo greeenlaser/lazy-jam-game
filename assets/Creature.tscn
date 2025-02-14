@@ -18,6 +18,7 @@ collision_layer = 17
 script = ExtResource("1_sgtnh")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D"]
+debug_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CylinderShape3D_od2ft")
@@ -30,3 +31,4 @@ skeleton = NodePath("../..")
 shape = SubResource("SphereShape3D_h2k0n")
 target_position = Vector3(0, 0, 0)
 collision_mask = 2
+debug_shape_custom_color = Color(0.0668446, 0.862608, 0.80002, 1)

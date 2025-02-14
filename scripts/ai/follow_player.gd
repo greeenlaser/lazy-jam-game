@@ -40,12 +40,16 @@ func _physics_process(delta):
 	if time_since_freeze < 10:
 		time_since_freeze += delta
 	if is_frozen:
+		var shape: SphereShape3D = shape_cast.shape
+		shape.radius = lerp(shape.radius, 25.0, 0.1)
 		if time_since_freeze >= 5:
 			is_frozen = false
 			set_movement_target(global_position)
 		else:
 			return
-
+			
+	var shape: SphereShape3D = shape_cast.shape
+	shape.radius = lerp(shape.radius, 20.0, 0.1)
 	var current_agent_position: Vector3 = global_position
 	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 
