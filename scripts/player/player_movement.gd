@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 @export var move_speed = 5.0
 @export var sprint_speed = 7.0
+@export var crouch_speed = 3.0
 @export var jump_velocity = 4.5
 @export var sensitivity = 0.1
 
@@ -12,6 +13,9 @@ extends CharacterBody3D
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
+
+const COLLIDER_HEIGHT: float = 2
+@onready var collider = $CollisionShape3D
 
 func _input(event):
 	if Input.is_action_pressed("ui_cancel"):
@@ -42,6 +46,16 @@ func _physics_process(delta: float) -> void:
 		camera.fov = lerp(camera.fov, fov*fov_change, 0.5)
 	else:
 		camera.fov = lerp(camera.fov, fov, 0.5)
+		
+	if Input.is_action_pressed("crouch"):
+		var shape: CapsuleShape3D = collider.shape
+		head.position.y = lerp(head.position.y, 0.25, 0.5)
+		shape.height = lerp(shape.height, COLLIDER_HEIGHT/2, 0.5)
+		speed = crouch_speed
+	else:
+		var shape: CapsuleShape3D = collider.shape
+		head.position.y = lerp(head.position.y, 0.75, 0.5)
+		shape.height = lerp(shape.height, COLLIDER_HEIGHT, 0.5)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

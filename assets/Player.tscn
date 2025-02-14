@@ -28,6 +28,7 @@ shader_parameter/amount = 5.0
 [node name="Player" type="Node3D"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+collision_layer = 2
 script = ExtResource("1_ab1us")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
@@ -37,6 +38,7 @@ mesh = SubResource("CapsuleMesh_t88jn")
 shape = SubResource("CapsuleShape3D_vuo1a")
 
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
 environment = SubResource("Environment_ja8p1")
