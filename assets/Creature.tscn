@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvhcbquod6han"]
+
+[ext_resource type="Script" path="res://scripts/ai/follow_player.gd" id="1_sgtnh"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_od2ft"]
+height = 1.82617
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1mldg"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_h2k0n"]
+radius = 20.0
+
+[node name="Creature" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04729, 0)
+collision_layer = 17
+script = ExtResource("1_sgtnh")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CylinderShape3D_od2ft")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CylinderMesh_1mldg")
+skeleton = NodePath("../..")
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="CharacterBody3D"]
+shape = SubResource("SphereShape3D_h2k0n")
+target_position = Vector3(0, 0, 0)
+collision_mask = 2

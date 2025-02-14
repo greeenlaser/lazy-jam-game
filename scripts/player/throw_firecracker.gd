@@ -19,4 +19,3 @@ func _process(delta: float) -> void:
 		f.get_node("RigidBody3D").apply_impulse(-camera.get_global_transform().basis.z*launch_force)
 		firecrackers -= 1
 		Signals.GetFirecrackerCount.emit(firecrackers)
-		
