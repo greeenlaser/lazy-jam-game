@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2jqolg1mbp5c"]
+[gd_scene load_steps=14 format=3 uid="uid://d2jqolg1mbp5c"]
 
 [ext_resource type="Script" path="res://scripts/player/player_movement.gd" id="1_ab1us"]
 [ext_resource type="Script" path="res://scripts/visuals/pixelization.gd" id="2_m35y0"]
 [ext_resource type="Shader" path="res://shaders/full-screen-pixelization.gdshader" id="2_njf8n"]
 [ext_resource type="Script" path="res://scripts/visuals/screen_sized_object.gd" id="3_se2bj"]
+[ext_resource type="Script" path="res://scripts/visuals/firecracker_text.gd" id="5_3f0n7"]
 [ext_resource type="Script" path="res://scripts/player/throw_firecracker.gd" id="5_03g3i"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t88jn"]
@@ -55,6 +56,28 @@ position = Vector2(462.25, 302.25)
 scale = Vector2(925.5, 605.5)
 mesh = SubResource("QuadMesh_rfy41")
 script = ExtResource("3_se2bj")
+
+[node name="FirecrackerCount" type="Control" parent="CharacterBody3D/ScreenSpace"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CharacterBody3D/ScreenSpace/FirecrackerCount"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -521.0
+offset_top = -95.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 66
+text = "0/3 Firecrackers
+"
+script = ExtResource("5_3f0n7")
 
 [node name="Firecrackers" type="Node3D" parent="CharacterBody3D"]
 script = ExtResource("5_03g3i")
