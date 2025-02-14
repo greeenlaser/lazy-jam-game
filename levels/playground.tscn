@@ -88,7 +88,7 @@ size = Vector3(1.8725, 0.166748, 1.97131)
 size = Vector3(9.25783, 0.266479, 2.34692)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kdg5b"]
-size = Vector3(1.8663, 0.135742, 9.16016)
+size = Vector3(1.70805, 0.135742, 9.16016)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ide1e"]
 size = Vector3(4.52173, 0.169434, 1.73132)
@@ -188,11 +188,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.52292, 8.53429, -4.46051)
 shape = SubResource("BoxShape3D_f4tb0")
 
 [node name="tower_stairs_upper" type="CollisionShape3D" parent="firewatch_tower_v1"]
-transform = Transform3D(0.69884, -0.715278, 0, 0.715278, 0.69884, 0, 0, 0, 1, -0.486077, 11.8235, -4.23712)
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -0.486077, 11.8235, -4.23712)
 shape = SubResource("BoxShape3D_yt714")
 
 [node name="tower_topfloor_floor_1" type="CollisionShape3D" parent="firewatch_tower_v1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.61779, 15.1534, 0.0395508)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.69691, 15.1534, 0.0395508)
 shape = SubResource("BoxShape3D_kdg5b")
 
 [node name="tower_topfloor_floor_2" type="CollisionShape3D" parent="firewatch_tower_v1"]
