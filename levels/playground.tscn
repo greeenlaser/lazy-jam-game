@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://fq6diq7hgid2"]
+[gd_scene load_steps=36 format=4 uid="uid://fq6diq7hgid2"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_q6qlh"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_i5vyx"]
@@ -114,6 +114,12 @@ size = Vector3(0.0487671, 3.59473, 5.7312)
 [sub_resource type="BoxShape3D" id="BoxShape3D_jeewo"]
 size = Vector3(5.72437, 3.57349, 0.0475922)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_sydtk"]
+size = Vector3(0.248108, 11.9683, 8.54614)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pp025"]
+size = Vector3(0.248108, 11.9689, 8.54614)
+
 [node name="Playground" type="Node3D"]
 
 [node name="FuncGodotMap" type="Node3D" parent="."]
@@ -226,3 +232,11 @@ shape = SubResource("BoxShape3D_mrjcv")
 [node name="tower_topfloor_wall_6" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00524902, 17.0085, 2.8512)
 shape = SubResource("BoxShape3D_jeewo")
+
+[node name="tower_stairs_guardrails_1" type="CollisionShape3D" parent="firewatch_tower_v1"]
+transform = Transform3D(0.992546, 0, -0.121869, 0, 1, 0, 0.121869, 0, 0.992546, -6.07169, 5.95609, 0.655056)
+shape = SubResource("BoxShape3D_sydtk")
+
+[node name="tower_stairs_guardrails_2" type="CollisionShape3D" parent="firewatch_tower_v1"]
+transform = Transform3D(0.992543, 0, -0.121869, 0, 1, 0, 0.121869, 0, 0.992543, -4.29112, 5.9586, 0.565275)
+shape = SubResource("BoxShape3D_pp025")
