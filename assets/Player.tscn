@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2jqolg1mbp5c"]
+[gd_scene load_steps=9 format=3 uid="uid://d2jqolg1mbp5c"]
 
 [ext_resource type="Script" path="res://scripts/player/player_movement.gd" id="1_ab1us"]
+[ext_resource type="Script" path="res://scripts/visuals/pixelization.gd" id="2_m35y0"]
+[ext_resource type="Shader" path="res://shaders/full-screen-pixelization.gdshader" id="2_njf8n"]
+[ext_resource type="Script" path="res://scripts/visuals/screen_sized_object.gd" id="3_se2bj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t88jn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vuo1a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ivl0s"]
+shader = ExtResource("2_njf8n")
+shader_parameter/amount = 5.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_rfy41"]
 
 [node name="Player" type="Node3D"]
 
@@ -21,3 +30,16 @@ shape = SubResource("CapsuleShape3D_vuo1a")
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
+
+[node name="ScreenSpace" type="Node2D" parent="CharacterBody3D"]
+
+[node name="Pixelization" type="Node2D" parent="CharacterBody3D/ScreenSpace"]
+script = ExtResource("2_m35y0")
+amount = 300.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody3D/ScreenSpace/Pixelization"]
+material = SubResource("ShaderMaterial_ivl0s")
+position = Vector2(462.25, 302.25)
+scale = Vector2(925.5, 605.5)
+mesh = SubResource("QuadMesh_rfy41")
+script = ExtResource("3_se2bj")
