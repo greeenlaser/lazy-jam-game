@@ -1,6 +1,6 @@
 shader_type spatial;
 render_mode skip_vertex_transform;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
+//render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_burley, specular_schlick_ggx;
 
 uniform vec3 uv1_scale;
 uniform vec3 uv1_offset;
@@ -18,9 +18,10 @@ void vertex() {
 	// Called for every vertex the material is visible on.
 	VERTEX = matrixMult(MODEL_MATRIX, VERTEX);
 	VERTEX = matrixMult(VIEW_MATRIX, VERTEX);
-
+//
 	VERTEX = round(VERTEX*amount)/amount;
 	UV = UV * uv1_scale.xy + uv1_offset.xy;
+	NORMAL = (VIEW_MATRIX * vec4(NORMAL, 0.0)).xyz;
 }
 
 // NOTE: Shader automatically converted from Godot Engine 4.3.stable.mono's StandardMaterial3D.
