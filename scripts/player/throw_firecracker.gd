@@ -12,7 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("mouse_left"):
+	if Input.is_action_just_pressed("mouse_right"):
 		var f = firecracker.instantiate()
 		get_tree().root.add_child(f)
 		f.global_position = global_position + -camera.get_global_transform().basis.z
