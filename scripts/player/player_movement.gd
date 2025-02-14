@@ -1,9 +1,14 @@
 extends CharacterBody3D
 
 
-@export var speed = 5.0
+@export var move_speed = 5.0
+@export var sprint_speed = 7.0
 @export var jump_velocity = 4.5
 @export var sensitivity = 0.1
+
+@export var fov = 75.0
+@export var fov_change = 1.1
+
 
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
@@ -28,11 +33,19 @@ func _physics_process(delta: float) -> void:
 		velocity.y = jump_velocity
 		
 		
+	var input_dir := Input.get_vector("left", "right", "forward", "back")
+	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	var speed = move_speed
+	if Input.is_action_pressed("sprint") and direction:
+		speed = sprint_speed
+		camera.fov = lerp(camera.fov, fov*fov_change, 0.5)
+	else:
+		camera.fov = lerp(camera.fov, fov, 0.5)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("left", "right", "forward", "back")
-	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed

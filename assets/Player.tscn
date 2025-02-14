@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2jqolg1mbp5c"]
+[gd_scene load_steps=12 format=3 uid="uid://d2jqolg1mbp5c"]
 
 [ext_resource type="Script" path="res://scripts/player/player_movement.gd" id="1_ab1us"]
 [ext_resource type="Script" path="res://scripts/visuals/pixelization.gd" id="2_m35y0"]
@@ -8,6 +8,15 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t88jn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vuo1a"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_10vki"]
+
+[sub_resource type="Sky" id="Sky_1dsn2"]
+sky_material = SubResource("ProceduralSkyMaterial_10vki")
+
+[sub_resource type="Environment" id="Environment_ja8p1"]
+background_mode = 2
+sky = SubResource("Sky_1dsn2")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ivl0s"]
 shader = ExtResource("2_njf8n")
@@ -19,7 +28,6 @@ shader_parameter/amount = 5.0
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 script = ExtResource("1_ab1us")
-speed = 6.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 mesh = SubResource("CapsuleMesh_t88jn")
@@ -30,6 +38,7 @@ shape = SubResource("CapsuleShape3D_vuo1a")
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
+environment = SubResource("Environment_ja8p1")
 
 [node name="ScreenSpace" type="Node2D" parent="CharacterBody3D"]
 
