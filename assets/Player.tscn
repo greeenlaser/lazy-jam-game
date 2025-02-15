@@ -56,8 +56,8 @@ curve = SubResource("Curve_f5a4y")
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 collision_layer = 2
 script = ExtResource("1_ab1us")
-move_speed = 6.0
-sprint_speed = 8.0
+move_speed = 4.0
+sprint_speed = 6.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 mesh = SubResource("CapsuleMesh_t88jn")
