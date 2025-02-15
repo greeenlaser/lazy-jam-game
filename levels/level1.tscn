@@ -1,11 +1,13 @@
-[gd_scene load_steps=32 format=3 uid="uid://redqw3tx4cum"]
+[gd_scene load_steps=34 format=3 uid="uid://redqw3tx4cum"]
 
 [ext_resource type="PackedScene" uid="uid://d2jqolg1mbp5c" path="res://assets/Player.tscn" id="1_akg7v"]
 [ext_resource type="PackedScene" uid="uid://b5hfpoonyapes" path="res://assets/props/ground_flat/ground_flat.tscn" id="2_bswn2"]
 [ext_resource type="PackedScene" uid="uid://kxx3jo81tmfq" path="res://assets/props/tree/tree.tscn" id="3_ix1gt"]
 [ext_resource type="PackedScene" uid="uid://dwautdutm3gqf" path="res://assets/props/ground_hill/ground_hill.tscn" id="3_oi1yo"]
+[ext_resource type="PackedScene" uid="uid://dvxclsytq27aa" path="res://assets/props/ground_flat_basic/ground_flat_basic.tscn" id="5_7tu0k"]
 [ext_resource type="PackedScene" uid="uid://clo8cmo47lk2n" path="res://assets/props/firewatch_tower.fbx" id="5_xr7k3"]
 [ext_resource type="Shader" path="res://shaders/vertex-snap.gdshader" id="6_awhsr"]
+[ext_resource type="PackedScene" uid="uid://kftlamdcfenm" path="res://assets/props/tree_flat/tree_flat.tscn" id="8_a0ls4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_va8lm"]
 render_priority = 0
@@ -210,88 +212,255 @@ shape = SubResource("BoxShape3D_75qon")
 transform = Transform3D(0.994293, -0.0213918, -0.104517, -0.0591692, 0.704627, -0.707107, 0.0887718, 0.709255, 0.69934, -4.41397, 5.01757, 0.372688)
 shape = SubResource("BoxShape3D_3f1pq")
 
-[node name="ground" type="Node" parent="."]
+[node name="ground_flat" type="Node" parent="."]
 
-[node name="ground_flat" type="StaticBody3D" parent="ground"]
+[node name="ground_flat" type="StaticBody3D" parent="ground_flat"]
 
-[node name="ground_flat" parent="ground/ground_flat" instance=ExtResource("2_bswn2")]
+[node name="ground_flat" parent="ground_flat/ground_flat" instance=ExtResource("2_bswn2")]
 transform = Transform3D(0.999999, -0.000810899, 0.0012211, 0.000810932, 1, -2.64597e-05, -0.00122108, 2.74482e-05, 0.999999, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/ground_flat"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_flat/ground_flat"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -10, 0)
 shape = SubResource("BoxShape3D_1ujmf")
 
-[node name="ground_flat2" type="StaticBody3D" parent="ground"]
+[node name="ground_flat2" type="StaticBody3D" parent="ground_flat"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
 
-[node name="ground_flat" parent="ground/ground_flat2" instance=ExtResource("2_bswn2")]
+[node name="ground_flat" parent="ground_flat/ground_flat2" instance=ExtResource("2_bswn2")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/ground_flat2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_flat/ground_flat2"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -10, 0)
 shape = SubResource("BoxShape3D_1ujmf")
 
-[node name="ground_flat3" type="StaticBody3D" parent="ground"]
+[node name="ground_flat3" type="StaticBody3D" parent="ground_flat"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 
-[node name="ground_flat" parent="ground/ground_flat3" instance=ExtResource("2_bswn2")]
+[node name="ground_flat" parent="ground_flat/ground_flat3" instance=ExtResource("2_bswn2")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/ground_flat3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_flat/ground_flat3"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -10, 0)
 shape = SubResource("BoxShape3D_1ujmf")
 
-[node name="ground_flat4" type="StaticBody3D" parent="ground"]
+[node name="ground_flat4" type="StaticBody3D" parent="ground_flat"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 
-[node name="ground_flat" parent="ground/ground_flat4" instance=ExtResource("2_bswn2")]
+[node name="ground_flat" parent="ground_flat/ground_flat4" instance=ExtResource("2_bswn2")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/ground_flat4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_flat/ground_flat4"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -10, 0)
 shape = SubResource("BoxShape3D_1ujmf")
 
-[node name="ground_flat5" type="StaticBody3D" parent="ground"]
+[node name="ground_flat5" type="StaticBody3D" parent="ground_flat"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
 
-[node name="ground_flat" parent="ground/ground_flat5" instance=ExtResource("2_bswn2")]
+[node name="ground_flat" parent="ground_flat/ground_flat5" instance=ExtResource("2_bswn2")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/ground_flat5"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_flat/ground_flat5"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -10, 0)
 shape = SubResource("BoxShape3D_1ujmf")
 
-[node name="ground_flat6" type="StaticBody3D" parent="ground"]
+[node name="ground_flat6" type="StaticBody3D" parent="ground_flat"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 20)
 
-[node name="ground_flat" parent="ground/ground_flat6" instance=ExtResource("2_bswn2")]
+[node name="ground_flat" parent="ground_flat/ground_flat6" instance=ExtResource("2_bswn2")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/ground_flat6"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_flat/ground_flat6"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -10, 0)
 shape = SubResource("BoxShape3D_1ujmf")
 
-[node name="ground_flat7" type="StaticBody3D" parent="ground"]
+[node name="ground_flat7" type="StaticBody3D" parent="ground_flat"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.74995, -20)
 
-[node name="ground_flat" parent="ground/ground_flat7" instance=ExtResource("2_bswn2")]
+[node name="ground_flat" parent="ground_flat/ground_flat7" instance=ExtResource("2_bswn2")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/ground_flat7"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_flat/ground_flat7"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -10, 0)
 shape = SubResource("BoxShape3D_1ujmf")
 
-[node name="ground_flat8" type="StaticBody3D" parent="ground"]
+[node name="ground_flat8" type="StaticBody3D" parent="ground_flat"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 3.74995, -20)
 
-[node name="ground_flat" parent="ground/ground_flat8" instance=ExtResource("2_bswn2")]
+[node name="ground_flat" parent="ground_flat/ground_flat8" instance=ExtResource("2_bswn2")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/ground_flat8"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_flat/ground_flat8"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -10, 0)
 shape = SubResource("BoxShape3D_1ujmf")
 
-[node name="ground_flat9" type="StaticBody3D" parent="ground"]
+[node name="ground_flat9" type="StaticBody3D" parent="ground_flat"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 3.74995, -20)
 
-[node name="ground_flat" parent="ground/ground_flat9" instance=ExtResource("2_bswn2")]
+[node name="ground_flat" parent="ground_flat/ground_flat9" instance=ExtResource("2_bswn2")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/ground_flat9"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground_flat/ground_flat9"]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -10, 0)
 shape = SubResource("BoxShape3D_1ujmf")
+
+[node name="ground_flat_basic" type="Node" parent="."]
+
+[node name="ground_flat_basic" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic2" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 20)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic2" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic3" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -20)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic3" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic4" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 40)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic4" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic5" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3.53858, -40)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic5" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic6" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic6" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic7" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 20)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic7" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic8" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -20)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic8" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic9" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 40)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic9" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic10" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 3.81408, -40)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic10" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic11" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 3.81408, -40)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic11" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic12" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.81408, -40)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic12" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic13" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 3.81408, -40)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic13" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic17" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3.81408, -60)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic17" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic22" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 3.81408, -60)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic22" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic23" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 3.81408, -40)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic23" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic24" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, -20)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic24" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic25" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 0)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic25" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic26" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 20)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic26" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic27" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 40)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic27" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic28" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 60)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic28" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic29" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 60)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic29" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic30" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 60)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic30" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic31" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 60)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic31" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic32" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 60)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic32" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic33" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 60)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic33" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic18" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 3.8855, -60)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic18" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic19" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 3.8855, -60)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic19" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic20" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8855, -60)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic20" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic21" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 3.8855, -60)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic21" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic14" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 40)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic14" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic15" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic15" instance=ExtResource("5_7tu0k")]
+
+[node name="ground_flat_basic16" type="StaticBody3D" parent="ground_flat_basic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 40)
+
+[node name="ground_flat_basic" parent="ground_flat_basic/ground_flat_basic16" instance=ExtResource("5_7tu0k")]
 
 [node name="ground_hill" type="Node" parent="."]
 
@@ -963,6 +1132,310 @@ transform = Transform3D(1.50851, 0, 0, 0, 1.79836, 0, 0, 0, 1.40201, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="trees/tree_big29"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.85131, 0)
 shape = SubResource("CylinderShape3D_2jyrb")
+
+[node name="trees_flat" type="Node" parent="."]
+
+[node name="tree_flat" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -49.5158, 0, 0)
+
+[node name="tree_flat" parent="trees_flat/tree_flat" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat2" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -53.7314, 0, 11.3392)
+
+[node name="tree_flat" parent="trees_flat/tree_flat2" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.10833, 0, 0, 0, 1.5384, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat3" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -50.9882, 0, 26.6274)
+
+[node name="tree_flat" parent="trees_flat/tree_flat3" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat36" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.368757, 0, 0.929526, 0, 1, 0, -0.929526, 0, -0.368757, -50.9882, 0, 51.9166)
+
+[node name="tree_flat" parent="trees_flat/tree_flat36" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat37" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.73027, 0, 0.683159, 0, 1, 0, -0.683159, 0, -0.73027, -47.4123, 0, 60.9304)
+
+[node name="tree_flat" parent="trees_flat/tree_flat37" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.35077, 0, 0, 0, 2.15536, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat38" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.73027, 0, 0.683159, 0, 1, 0, -0.683159, 0, -0.73027, -43.1851, 0, 51.1248)
+
+[node name="tree_flat" parent="trees_flat/tree_flat38" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.60961, 0, 0, 0, 1.73921, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat39" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.423662, 0, 0.90582, 0, 1, 0, -0.90582, 0, -0.423662, -61.9941, 0, 50.6919)
+
+[node name="tree_flat" parent="trees_flat/tree_flat39" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat40" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.0326318, 0, 0.999467, 0, 1, 0, -0.999467, 0, 0.0326318, -65.3921, 0, 35.5919)
+
+[node name="tree_flat" parent="trees_flat/tree_flat40" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat41" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.99977, 0, 0.021431, 0, 1, 0, -0.021431, 0, -0.99977, -34.4208, 0, 55.5642)
+
+[node name="tree_flat" parent="trees_flat/tree_flat41" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat42" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.99977, 0, 0.021431, 0, 1, 0, -0.021431, 0, -0.99977, -31.1032, 0, 64.2026)
+
+[node name="tree_flat" parent="trees_flat/tree_flat42" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.62846, 0, 0, 0, 1.4487, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat43" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.99977, 0, 0.021431, 0, 1, 0, -0.021431, 0, -0.99977, -18.5617, 0, 64.4714)
+
+[node name="tree_flat" parent="trees_flat/tree_flat43" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.94512, 0, 0, 0, 2.12347, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat44" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.99977, 0, 0.021431, 0, 1, 0, -0.021431, 0, -0.99977, -5.93348, 0, 61.4113)
+
+[node name="tree_flat" parent="trees_flat/tree_flat44" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat45" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.99977, 0, 0.021431, 0, 1, 0, -0.021431, 0, -0.99977, 7.43232, 0, 63.3858)
+
+[node name="tree_flat" parent="trees_flat/tree_flat45" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.3642, 0, 0, 0, 1.73839, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat46" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.99977, 0, 0.021431, 0, 1, 0, -0.021431, 0, -0.99977, 21.3052, 0, 63.6831)
+
+[node name="tree_flat" parent="trees_flat/tree_flat46" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat47" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.99977, 0, 0.021431, 0, 1, 0, -0.021431, 0, -0.99977, 14.8467, 0, 54.6663)
+
+[node name="tree_flat" parent="trees_flat/tree_flat47" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat48" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.99977, 0, 0.021431, 0, 1, 0, -0.021431, 0, -0.99977, 0.555867, 0, 51.1881)
+
+[node name="tree_flat" parent="trees_flat/tree_flat48" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat49" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.99977, 0, 0.021431, 0, 1, 0, -0.021431, 0, -0.99977, -12.1372, 0, 50.916)
+
+[node name="tree_flat" parent="trees_flat/tree_flat49" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat50" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.99977, 0, 0.021431, 0, 1, 0, -0.021431, 0, -0.99977, -23.3405, 0, 47.458)
+
+[node name="tree_flat" parent="trees_flat/tree_flat50" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.70569, 0, 0, 0, 2.03953, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat51" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.58066, 0, 0.814146, 0, 1, 0, -0.814146, 0, -0.58066, -41.7258, 0, 42.9239)
+
+[node name="tree_flat" parent="trees_flat/tree_flat51" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat52" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.999928, 0, 0.0120251, 0, 1, 0, -0.0120251, 0, -0.999928, 28.0552, 0, 53.5656)
+
+[node name="tree_flat" parent="trees_flat/tree_flat52" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat53" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.76825, 0, -0.64015, 0, 1, 0, 0.64015, 0, -0.76825, 39.2201, 0, 44.3505)
+
+[node name="tree_flat" parent="trees_flat/tree_flat53" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat54" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.76825, 0, -0.64015, 0, 1, 0, 0.64015, 0, -0.76825, 44.4505, 0, 55.7169)
+
+[node name="tree_flat" parent="trees_flat/tree_flat54" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.77156, 0, 0, 0, 1.94859, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat55" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-0.987767, 0, -0.155935, 0, 1, 0, 0.155935, 0, -0.987767, 38.7783, 1.22416, 60.2575)
+
+[node name="tree_flat" parent="trees_flat/tree_flat55" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat56" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-1.39921, 0, -0.155935, 0, 1.45274, 0, 0.220887, 0, -0.987767, 25.5451, 1.22416, 58.1039)
+
+[node name="tree_flat" parent="trees_flat/tree_flat56" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat4" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -46.9784, 0, 39.1489)
+
+[node name="tree_flat" parent="trees_flat/tree_flat4" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.76848, 0, 0, 0, 1.58596, 0, 0, 0, 1.00095, 0, 0, 0)
+
+[node name="tree_flat5" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -46.9784, 0, 17.5437)
+
+[node name="tree_flat" parent="trees_flat/tree_flat5" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat6" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -46.9784, 0, -8.02181)
+
+[node name="tree_flat" parent="trees_flat/tree_flat6" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat7" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -57.9385, 0, -8.02181)
+
+[node name="tree_flat" parent="trees_flat/tree_flat7" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.4755, 0, 0, 0, 1.53187, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat8" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -57.9385, 0, 4.06456)
+
+[node name="tree_flat" parent="trees_flat/tree_flat8" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.25528, 0, 0, 0, 1.34921, 0, 0, 0, 1.00636, 0, 0, 0)
+
+[node name="tree_flat9" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -57.9385, 0, 22.9589)
+
+[node name="tree_flat" parent="trees_flat/tree_flat9" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.31014, 0, 0, 0, 1.5618, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat10" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -57.9385, 0, -24.0532)
+
+[node name="tree_flat" parent="trees_flat/tree_flat10" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.39535, 0, 0, 0, 1.35359, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat11" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -46.101, 0, -19.7677)
+
+[node name="tree_flat" parent="trees_flat/tree_flat11" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat12" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.4248, 0, 0.905287, 0, 1, 0, -0.905287, 0, 0.4248, -46.101, 1.34346, -30.6591)
+
+[node name="tree_flat" parent="trees_flat/tree_flat12" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.69804, 0, 0, 0, 1.84519, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat13" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.4248, 0, 0.905287, 0, 1, 0, -0.905287, 0, 0.4248, -40.7189, 1.34346, -42.1289)
+
+[node name="tree_flat" parent="trees_flat/tree_flat13" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.8725, 0, 0, 0, 1.76795, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat14" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.4248, 0, 0.905287, 0, 1, 0, -0.905287, 0, 0.4248, -37.1767, 1.34346, -32.7002)
+
+[node name="tree_flat" parent="trees_flat/tree_flat14" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat15" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.4248, 0, 0.905287, 0, 1, 0, -0.905287, 0, 0.4248, -52.6171, 3.69693, -39.9351)
+
+[node name="tree_flat" parent="trees_flat/tree_flat15" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat16" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.4248, 0, 0.905287, 0, 1, 0, -0.905287, 0, 0.4248, -67.6884, 3.69693, -47.0072)
+
+[node name="tree_flat" parent="trees_flat/tree_flat16" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(2.18366, 0, 0, 0, 2.03788, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat17" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.809775, 0, 0.58674, 0, 1, 0, -0.58674, 0, 0.809775, -60.8785, 3.69693, -61.5199)
+
+[node name="tree_flat" parent="trees_flat/tree_flat17" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat18" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.809775, 0, 0.58674, 0, 1, 0, -0.58674, 0, 0.809775, -51.155, 3.69693, -68.5652)
+
+[node name="tree_flat" parent="trees_flat/tree_flat18" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.50433, 0, 0, 0, 1.73201, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat19" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.809775, 0, 0.58674, 0, 1, 0, -0.58674, 0, 0.809775, -42.3454, 3.69693, -56.4069)
+
+[node name="tree_flat" parent="trees_flat/tree_flat19" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat20" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.999877, 0, 0.0156549, 0, 1, 0, -0.0156549, 0, 0.999877, -23.8703, 3.69693, -61.5248)
+
+[node name="tree_flat" parent="trees_flat/tree_flat20" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.62866, 0, 0, 0, 1.68546, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat21" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.999877, 0, 0.0156549, 0, 1, 0, -0.0156549, 0, 0.999877, -28.9326, 3.69693, -49.0984)
+
+[node name="tree_flat" parent="trees_flat/tree_flat21" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat22" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.999877, 0, 0.0156549, 0, 1, 0, -0.0156549, 0, 0.999877, -12.0183, 3.69693, -49.3632)
+
+[node name="tree_flat" parent="trees_flat/tree_flat22" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat23" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.999877, 0, 0.0156549, 0, 1, 0, -0.0156549, 0, 0.999877, -12.1833, 3.69693, -59.9019)
+
+[node name="tree_flat" parent="trees_flat/tree_flat23" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat24" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.999877, 0, 0.0156549, 0, 1, 0, -0.0156549, 0, 0.999877, 8.25226, 3.69693, -60.2219)
+
+[node name="tree_flat" parent="trees_flat/tree_flat24" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat25" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.999877, 0, 0.0156549, 0, 1, 0, -0.0156549, 0, 0.999877, 8.46072, 3.69693, -46.9078)
+
+[node name="tree_flat" parent="trees_flat/tree_flat25" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat26" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.999877, 0, 0.0156549, 0, 1, 0, -0.0156549, 0, 0.999877, -3.74284, 3.69693, -46.7167)
+
+[node name="tree_flat" parent="trees_flat/tree_flat26" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.59376, 0, 0, 0, 1.82834, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat27" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.999877, 0, 0.0156549, 0, 1, 0, -0.0156549, 0, 0.999877, -3.61393, 3.69693, -38.4837)
+
+[node name="tree_flat" parent="trees_flat/tree_flat27" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat28" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.999877, 0, 0.0156549, 0, 1, 0, -0.0156549, 0, 0.999877, -17.2722, 3.69693, -38.2699)
+
+[node name="tree_flat" parent="trees_flat/tree_flat28" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat29" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.999877, 0, 0.0156549, 0, 1, 0, -0.0156549, 0, 0.999877, -27.7446, 3.69693, -40.9617)
+
+[node name="tree_flat" parent="trees_flat/tree_flat29" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat30" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.999877, 0, 0.0156549, 0, 1, 0, -0.0156549, 0, 0.999877, 19.8321, 3.69693, -41.7066)
+
+[node name="tree_flat" parent="trees_flat/tree_flat30" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.45338, 0, 0, 0, 1.62207, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat31" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.838595, 0, -0.544756, 0, 1, 0, 0.544756, 0, 0.838595, 19.6853, 3.69693, -51.0806)
+
+[node name="tree_flat" parent="trees_flat/tree_flat31" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.3168, 0, 0, 0, 1.4296, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat32" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.838595, 0, -0.544756, 0, 1, 0, 0.544756, 0, 0.838595, 25.6849, 3.69693, -60.3164)
+
+[node name="tree_flat" parent="trees_flat/tree_flat32" instance=ExtResource("8_a0ls4")]
+transform = Transform3D(1.32878, 0, 0, 0, 1.1673, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="tree_flat33" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.838595, 0, -0.544756, 0, 1, 0, 0.544756, 0, 0.838595, 35.6024, 3.69693, -53.8739)
+
+[node name="tree_flat" parent="trees_flat/tree_flat33" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat34" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.838595, 0, -0.544756, 0, 1, 0, 0.544756, 0, 0.838595, 29.4969, 3.69693, -44.4753)
+
+[node name="tree_flat" parent="trees_flat/tree_flat34" instance=ExtResource("8_a0ls4")]
+
+[node name="tree_flat35" type="StaticBody3D" parent="trees_flat"]
+transform = Transform3D(0.486564, 0, -0.873645, 0, 1, 0, 0.873645, 0, 0.486564, 36.3457, 3.69693, -40.0263)
+
+[node name="tree_flat" parent="trees_flat/tree_flat35" instance=ExtResource("8_a0ls4")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.76955, 0.517264, -0.374474, 0.0114729, 0.597515, 0.801776, 0.638484, 0.61271, -0.465752, 0, 12.0003, 0)
