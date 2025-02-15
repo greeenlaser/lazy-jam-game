@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm4nwrxou7fen"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ro7i"]
+size = Vector3(0.248108, 1.08823, 9.31771)
+
+[node name="tower_stairs_guardrails_8" type="CollisionShape3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0559549, 15.6424, 4.57861)
+shape = SubResource("BoxShape3D_0ro7i")

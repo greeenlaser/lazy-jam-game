@@ -1,0 +1,48 @@
+[gd_scene load_steps=12 format=3 uid="uid://kxx3jo81tmfq"]
+
+[ext_resource type="PackedScene" uid="uid://cl1b0rdiwgvho" path="res://assets/props/tree/tree.fbx" id="1_lq134"]
+[ext_resource type="Texture2D" uid="uid://dcmfloyuetf1s" path="res://assets/props/tree/tree_leaves_1_Base_color.png" id="2_lsjga"]
+[ext_resource type="Texture2D" uid="uid://btsxkcervurxo" path="res://assets/props/tree/tree_leaves_2_Base_color.png" id="3_l7pbf"]
+[ext_resource type="Texture2D" uid="uid://n7klq5yncwuy" path="res://assets/props/tree/tree_leaves_3_Base_color.png" id="4_wn0y0"]
+[ext_resource type="Texture2D" uid="uid://bccdc6qpgihar" path="res://assets/props/tree/tree_leaves_4_Base_color.png" id="5_6y57v"]
+[ext_resource type="Texture2D" uid="uid://f6ghwn3md8lj" path="res://assets/props/tree/tree_trunk_Base_color.png" id="6_wateb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6fyfr"]
+render_priority = 4
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_lsjga")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gilm"]
+render_priority = 3
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("3_l7pbf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnecs"]
+render_priority = 2
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("4_wn0y0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oo5eu"]
+render_priority = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("5_6y57v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d41h3"]
+albedo_texture = ExtResource("6_wateb")
+
+[node name="tree" instance=ExtResource("1_lq134")]
+
+[node name="tree_001" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6fyfr")
+surface_material_override/1 = SubResource("StandardMaterial3D_6gilm")
+surface_material_override/2 = SubResource("StandardMaterial3D_rnecs")
+surface_material_override/3 = SubResource("StandardMaterial3D_oo5eu")
+surface_material_override/4 = SubResource("StandardMaterial3D_d41h3")

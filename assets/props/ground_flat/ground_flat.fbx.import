@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://clo8cmo47lk2n"
-path="res://.godot/imported/firewatch_tower_v1.fbx-50006f9925906817eb086432280cdeb6.scn"
+uid="uid://6l06qmfbuc1g"
+path="res://.godot/imported/ground_flat.fbx-58dee5d5a0eb73480d8fc109ffccfb90.scn"
 
 [deps]
 
-source_file="res://assets/props/firewatch_tower_v1.fbx"
-dest_files=["res://.godot/imported/firewatch_tower_v1.fbx-50006f9925906817eb086432280cdeb6.scn"]
+source_file="res://assets/props/ground_flat/ground_flat.fbx"
+dest_files=["res://.godot/imported/ground_flat.fbx-58dee5d5a0eb73480d8fc109ffccfb90.scn"]
 
 [params]
 
