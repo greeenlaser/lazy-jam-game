@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://redqw3tx4cum"]
+[gd_scene load_steps=32 format=3 uid="uid://redqw3tx4cum"]
 
 [ext_resource type="PackedScene" uid="uid://d2jqolg1mbp5c" path="res://assets/Player.tscn" id="1_akg7v"]
 [ext_resource type="PackedScene" uid="uid://b5hfpoonyapes" path="res://assets/props/ground_flat/ground_flat.tscn" id="2_bswn2"]
@@ -6,9 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dwautdutm3gqf" path="res://assets/props/ground_hill/ground_hill.tscn" id="3_oi1yo"]
 [ext_resource type="PackedScene" uid="uid://clo8cmo47lk2n" path="res://assets/props/firewatch_tower.fbx" id="5_xr7k3"]
 [ext_resource type="Shader" path="res://shaders/vertex-snap.gdshader" id="6_awhsr"]
-[ext_resource type="PackedScene" uid="uid://bm4nwrxou7fen" path="res://assets/props/firewatch_tower.tscn" id="7_tb8wk"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ihu4x"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_va8lm"]
 render_priority = 0
 shader = ExtResource("6_awhsr")
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
@@ -23,55 +22,55 @@ shader_parameter/metallic_texture_channel = null
 shader_parameter/specular = null
 shader_parameter/metallic = null
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_iatbt"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_vf4tx"]
 size = Vector3(1.94275, 0.395508, 12.6285)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_pv0nm"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_uc7fw"]
 size = Vector3(1.8725, 0.166748, 1.97131)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_67gqc"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_rjwaa"]
 size = Vector3(9.25783, 0.266479, 2.00061)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_q7dac"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_uu8m3"]
 size = Vector3(1.70805, 0.135742, 9.16016)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cy37y"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_36oth"]
 size = Vector3(4.52173, 0.169434, 1.73132)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_unocf"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_03wj2"]
 size = Vector3(7.45947, 0.156128, 7.50757)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_stjub"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_lfusa"]
 size = Vector3(0.0538483, 3.58057, 3.53053)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0l5v2"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nuyy"]
 size = Vector3(0.0848389, 3.56174, 0.994873)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ttnhs"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_jvhxw"]
 size = Vector3(0.0504761, 1.28828, 1.37805)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_72djf"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ge5py"]
 size = Vector3(5.72345, 3.58911, 0.0625)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ctehp"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ktv6a"]
 size = Vector3(0.0487671, 3.59473, 5.7312)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wm7q8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hmgaf"]
 size = Vector3(5.72437, 3.57349, 0.0475922)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ohjrv"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_3f1pq"]
 size = Vector3(0.248108, 0.79603, 12.4163)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_18ly4"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_dot0d"]
 size = Vector3(0.248108, 0.79603, 9.33097)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_g3ed4"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_wl0ip"]
 size = Vector3(0.248108, 1.08823, 1.85335)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_43kf8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_75qon"]
 size = Vector3(0.248108, 1.08823, 9.31771)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_81epo"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ssev4"]
 size = Vector3(0.248108, 1.08823, 4.77413)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ujmf"]
@@ -87,18 +86,16 @@ radius = 2.7804
 height = 16.0617
 radius = 3.48136
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8np8y"]
-sky_top_color = Color(0.11671, 0.147741, 0.190894, 1)
-sky_horizon_color = Color(0.226126, 0.234101, 0.315495, 1)
-ground_bottom_color = Color(0, 0, 0, 1)
-ground_horizon_color = Color(0, 0, 0, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ockfx"]
 
-[sub_resource type="Sky" id="Sky_tmewl"]
-sky_material = SubResource("ProceduralSkyMaterial_8np8y")
+[sub_resource type="Sky" id="Sky_tx7uq"]
+sky_material = SubResource("ProceduralSkyMaterial_ockfx")
 
-[sub_resource type="Environment" id="Environment_u1c5y"]
+[sub_resource type="Environment" id="Environment_3ossl"]
 background_mode = 2
-sky = SubResource("Sky_tmewl")
+background_energy_multiplier = 0.2
+sky = SubResource("Sky_tx7uq")
+volumetric_fog_enabled = true
 
 [node name="Forest" type="Node3D"]
 
@@ -106,106 +103,112 @@ sky = SubResource("Sky_tmewl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40746, 16.2699, 9.17878)
 
 [node name="firewatch_tower_v1" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.19552, 0, 7.73889)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.26408, 0, 9.1765)
 
 [node name="firewatch_tower_v1" parent="firewatch_tower_v1" instance=ExtResource("5_xr7k3")]
 
 [node name="Cube_022" parent="firewatch_tower_v1/firewatch_tower_v1" index="0"]
-material_override = SubResource("ShaderMaterial_ihu4x")
+material_override = SubResource("ShaderMaterial_va8lm")
 
 [node name="tower_stairs_lower" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(0.993169, -0.0825181, -0.0825037, 0, 0.707045, -0.707168, 0.116688, 0.702337, 0.702215, -5.2044, 4.18433, 0.673369)
-shape = SubResource("BoxShape3D_iatbt")
+shape = SubResource("BoxShape3D_vf4tx")
 
 [node name="tower_stairs_middle" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.52292, 8.53429, -4.46051)
-shape = SubResource("BoxShape3D_pv0nm")
+shape = SubResource("BoxShape3D_uc7fw")
 
 [node name="tower_stairs_upper" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(0.703891, -0.703891, -0.0952724, 0.707107, 0.707107, 0, 0.0673678, -0.0673678, 0.995451, -0.483268, 11.8094, -4.17313)
-shape = SubResource("BoxShape3D_67gqc")
+shape = SubResource("BoxShape3D_rjwaa")
 
 [node name="tower_topfloor_floor_1" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.69691, 15.1534, 0.0395508)
-shape = SubResource("BoxShape3D_q7dac")
+shape = SubResource("BoxShape3D_uu8m3")
 
 [node name="tower_topfloor_floor_2" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30237, 15.1495, -3.71966)
-shape = SubResource("BoxShape3D_cy37y")
+shape = SubResource("BoxShape3D_36oth")
 
 [node name="tower_topfloor_floor_3" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.854736, 15.1445, 0.859985)
-shape = SubResource("BoxShape3D_unocf")
+shape = SubResource("BoxShape3D_03wj2")
 
 [node name="tower_topfloor_wall_1" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83189, 17.0035, 1.10853)
-shape = SubResource("BoxShape3D_stjub")
+shape = SubResource("BoxShape3D_lfusa")
 
 [node name="tower_topfloor_wall_2" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8253, 17.0027, -2.33564)
-shape = SubResource("BoxShape3D_0l5v2")
+shape = SubResource("BoxShape3D_3nuyy")
 
 [node name="tower_topfloor_wall_3" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83078, 18.13, -1.22723)
-shape = SubResource("BoxShape3D_ttnhs")
+shape = SubResource("BoxShape3D_jvhxw")
 
 [node name="tower_topfloor_wall_4" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00489235, 17.0179, -2.82765)
-shape = SubResource("BoxShape3D_72djf")
+shape = SubResource("BoxShape3D_ge5py")
 
 [node name="tower_topfloor_wall_5" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84857, 17.0114, 0.0137939)
-shape = SubResource("BoxShape3D_ctehp")
+shape = SubResource("BoxShape3D_ktv6a")
 
 [node name="tower_topfloor_wall_6" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00524902, 17.0085, 2.8512)
-shape = SubResource("BoxShape3D_wm7q8")
+shape = SubResource("BoxShape3D_hmgaf")
 
 [node name="tower_stairs_guardrails_1" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(0.994293, -0.0213918, -0.104517, -0.0591692, 0.704627, -0.707107, 0.0887718, 0.709255, 0.69934, -6.10658, 5.017, 0.372688)
-shape = SubResource("BoxShape3D_ohjrv")
+shape = SubResource("BoxShape3D_3f1pq")
 
 [node name="tower_stairs_guardrails_5" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(-0.0883001, -0.724356, -0.683748, -0.061099, 0.689076, -0.722109, 0.994218, -0.021986, -0.105103, -0.257644, 12.5809, -5.0205)
-shape = SubResource("BoxShape3D_18ly4")
+shape = SubResource("BoxShape3D_dot0d")
 
 [node name="tower_stairs_guardrails_12" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(-0.0883001, -0.724356, -0.683748, -0.061099, 0.689076, -0.722109, 0.994218, -0.021986, -0.105103, -0.257644, 12.5809, -3.29591)
-shape = SubResource("BoxShape3D_18ly4")
+shape = SubResource("BoxShape3D_dot0d")
 
 [node name="tower_stairs_guardrails_3" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.40069, 9.06255, -4.62529)
-shape = SubResource("BoxShape3D_g3ed4")
+shape = SubResource("BoxShape3D_wl0ip")
 
 [node name="tower_stairs_guardrails_4" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.57376, 9.06255, -5.47538)
-shape = SubResource("BoxShape3D_g3ed4")
+shape = SubResource("BoxShape3D_wl0ip")
 
 [node name="tower_stairs_guardrails_6" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.70726, 15.5955, -4.46209)
-shape = SubResource("BoxShape3D_g3ed4")
+shape = SubResource("BoxShape3D_wl0ip")
 
 [node name="tower_stairs_guardrails_11" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(0.998548, 0, 0.0538697, 0, 1, 0, -0.0538697, 0, 0.998548, -0.00838566, 15.6797, -3.97195)
-shape = SubResource("BoxShape3D_g3ed4")
+shape = SubResource("BoxShape3D_wl0ip")
 
 [node name="tower_stairs_guardrails_7" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.59498, 15.6424, 0.0425874)
-shape = SubResource("BoxShape3D_43kf8")
+shape = SubResource("BoxShape3D_75qon")
 
 [node name="tower_stairs_guardrails_9" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57696, 15.6424, 0.0425874)
-shape = SubResource("BoxShape3D_43kf8")
+shape = SubResource("BoxShape3D_75qon")
 
 [node name="tower_stairs_guardrails_10" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(-0.0006458, 0, -1, 0, 1, 0, 1, 0, -0.0006458, -2.2861, 15.6424, -4.65392)
-shape = SubResource("BoxShape3D_81epo")
+shape = SubResource("BoxShape3D_ssev4")
 
-[node name="tower_stairs_guardrails_8" parent="firewatch_tower_v1" instance=ExtResource("7_tb8wk")]
+[node name="tower_roof" type="GPUParticlesCollisionBox3D" parent="firewatch_tower_v1"]
+transform = Transform3D(-0.0006458, 0, -1, 0, 1, 0, 1, 0, -0.0006458, -0.00675011, 19.4878, 0.147602)
+size = Vector3(10.348, 3.19635, 10.397)
+
+[node name="tower_stairs_guardrails_8" type="CollisionShape3D" parent="firewatch_tower_v1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0559549, 15.6424, 4.57861)
+shape = SubResource("BoxShape3D_75qon")
 
 [node name="tower_stairs_guardrails_2" type="CollisionShape3D" parent="firewatch_tower_v1"]
 transform = Transform3D(0.994293, -0.0213918, -0.104517, -0.0591692, 0.704627, -0.707107, 0.0887718, 0.709255, 0.69934, -4.41397, 5.01757, 0.372688)
-shape = SubResource("BoxShape3D_ohjrv")
+shape = SubResource("BoxShape3D_3f1pq")
 
 [node name="ground" type="Node" parent="."]
 
@@ -963,10 +966,11 @@ shape = SubResource("CylinderShape3D_2jyrb")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.76955, 0.517264, -0.374474, 0.0114729, 0.597515, 0.801776, 0.638484, 0.61271, -0.465752, 0, 12.0003, 0)
-light_energy = 0.3
+light_color = Color(0.442911, 0.442911, 0.442911, 1)
+light_energy = 0.5
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_u1c5y")
+environment = SubResource("Environment_3ossl")
 
 [editable path="firewatch_tower_v1/firewatch_tower_v1"]

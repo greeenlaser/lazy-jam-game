@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d2jqolg1mbp5c" path="res://assets/Player.tscn" id="4_kt26h"]
 [ext_resource type="PackedScene" uid="uid://bvhcbquod6han" path="res://assets/Creature.tscn" id="6_m76sy"]
 [ext_resource type="Script" path="res://scripts/interactables/test_interactable.gd" id="7_auoac"]
-[ext_resource type="PackedScene" uid="uid://clo8cmo47lk2n" path="res://assets/props/firewatch_tower_v1.fbx" id="7_rmnt6"]
+[ext_resource type="PackedScene" uid="uid://clo8cmo47lk2n" path="res://assets/props/firewatch_tower.fbx" id="7_rmnt6"]
 [ext_resource type="Script" path="res://scripts/interactables/firecracker.gd" id="8_hxt6c"]
 [ext_resource type="Script" path="res://scripts/interactables/key.gd" id="9_h1p2s"]
 
@@ -171,12 +171,12 @@ size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lowwj"]
 
-[sub_resource type="Sky" id="Sky_tx7uq"]
+[sub_resource type="Sky" id="Sky_mib1r"]
 sky_material = SubResource("ProceduralSkyMaterial_lowwj")
 
 [sub_resource type="Environment" id="Environment_2mwqn"]
 background_mode = 2
-sky = SubResource("Sky_tx7uq")
+sky = SubResource("Sky_mib1r")
 volumetric_fog_enabled = true
 
 [node name="Playground" type="Node3D"]
