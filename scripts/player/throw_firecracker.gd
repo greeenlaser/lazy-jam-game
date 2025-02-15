@@ -5,10 +5,15 @@ extends Node3D
 
 @export var launch_force: float = 5
 
-var firecrackers: int = 3
+var firecrackers: int = 0
+
+func add_firecracker():
+	firecrackers += 1
+	Signals.GetFirecrackerCount.emit(firecrackers)	
 
 func _ready():
 	Signals.GetFirecrackerCount.emit(firecrackers)
+	Signals.AddFirecracker.connect(add_firecracker)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2jqolg1mbp5c"]
+[gd_scene load_steps=16 format=3 uid="uid://d2jqolg1mbp5c"]
 
 [ext_resource type="Script" path="res://scripts/player/player_movement.gd" id="1_ab1us"]
+[ext_resource type="Script" path="res://scripts/player/interaction.gd" id="2_aidtc"]
 [ext_resource type="Script" path="res://scripts/visuals/pixelization.gd" id="2_m35y0"]
 [ext_resource type="Shader" path="res://shaders/full-screen-pixelization.gdshader" id="2_njf8n"]
 [ext_resource type="Script" path="res://scripts/visuals/screen_sized_object.gd" id="3_se2bj"]
 [ext_resource type="Script" path="res://scripts/visuals/firecracker_text.gd" id="5_3f0n7"]
 [ext_resource type="Script" path="res://scripts/player/throw_firecracker.gd" id="5_03g3i"]
+[ext_resource type="Script" path="res://scripts/visuals/key_text.gd" id="7_0ve20"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_t88jn"]
 
@@ -45,6 +47,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
 environment = SubResource("Environment_ja8p1")
+script = ExtResource("2_aidtc")
+
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.343903)
+target_position = Vector3(0, 0, -1.5)
+debug_shape_custom_color = Color(1, 1, 1, 1)
 
 [node name="ScreenSpace" type="Node2D" parent="CharacterBody3D"]
 
@@ -80,6 +88,27 @@ position = Vector2(462.25, 302.25)
 scale = Vector2(925.5, 605.5)
 mesh = SubResource("QuadMesh_rfy41")
 script = ExtResource("3_se2bj")
+
+[node name="Key" type="Control" parent="CharacterBody3D/ScreenSpace"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Panel" type="Panel" parent="CharacterBody3D/ScreenSpace/Key"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 987.0
+offset_right = 873.0
+offset_bottom = 1083.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CharacterBody3D/ScreenSpace/Key/Panel"]
+layout_mode = 0
+offset_right = 269.0
+offset_bottom = 95.0
+theme_override_font_sizes/normal_font_size = 61
+text = "Key"
+script = ExtResource("7_0ve20")
 
 [node name="Firecrackers" type="Node3D" parent="CharacterBody3D"]
 script = ExtResource("5_03g3i")
