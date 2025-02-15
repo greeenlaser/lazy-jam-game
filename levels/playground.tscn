@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://fq6diq7hgid2"]
+[gd_scene load_steps=54 format=4 uid="uid://fq6diq7hgid2"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_q6qlh"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_i5vyx"]
@@ -169,10 +169,20 @@ size = Vector3(0.2, 0.2, 0.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_dvkrm"]
 size = Vector3(0.2, 0.2, 0.2)
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lowwj"]
+
+[sub_resource type="Sky" id="Sky_tx7uq"]
+sky_material = SubResource("ProceduralSkyMaterial_lowwj")
+
+[sub_resource type="Environment" id="Environment_2mwqn"]
+background_mode = 2
+sky = SubResource("Sky_tx7uq")
+volumetric_fog_enabled = true
+
 [node name="Playground" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("4_kt26h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2, 1.18926, 8.21676)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2, 11.4343, 8.21676)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.398173, 0, -0.917311, 0.742063, 0.58787, 0.322104, 0.539259, -0.808956, 0.234074, 0, 0, 0)
@@ -328,6 +338,10 @@ shape = SubResource("BoxShape3D_0ro7i")
 transform = Transform3D(-0.0006458, 0, -1, 0, 1, 0, 1, 0, -0.0006458, -2.2861, 15.6424, -4.65392)
 shape = SubResource("BoxShape3D_rybaw")
 
+[node name="tower_roof" type="GPUParticlesCollisionBox3D" parent="Map/firewatch_tower_v1"]
+transform = Transform3D(-0.0006458, 0, -1, 0, 1, 0, 1, 0, -0.0006458, -0.00675011, 19.4878, 0.147602)
+size = Vector3(10.348, 3.19635, 10.397)
+
 [node name="tower_stairs_guardrails_8" type="CollisionShape3D" parent="Map/firewatch_tower_v1"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0559549, 15.6424, 4.57861)
 shape = SubResource("BoxShape3D_0ro7i")
@@ -389,4 +403,8 @@ shape = SubResource("BoxShape3D_dvkrm")
 [node name="Creature" parent="." instance=ExtResource("6_m76sy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.009, 1.03398, 0.94892)
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2mwqn")
+
+[editable path="Player"]
 [editable path="Map/firewatch_tower_v1/firewatch_tower_v1"]

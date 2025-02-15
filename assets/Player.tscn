@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d2jqolg1mbp5c"]
+[gd_scene load_steps=17 format=3 uid="uid://d2jqolg1mbp5c"]
 
 [ext_resource type="Script" path="res://scripts/player/player_movement.gd" id="1_ab1us"]
 [ext_resource type="Script" path="res://scripts/player/interaction.gd" id="2_aidtc"]
@@ -13,20 +13,43 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vuo1a"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_10vki"]
-
-[sub_resource type="Sky" id="Sky_1dsn2"]
-sky_material = SubResource("ProceduralSkyMaterial_10vki")
-
-[sub_resource type="Environment" id="Environment_ja8p1"]
-background_mode = 2
-sky = SubResource("Sky_1dsn2")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ivl0s"]
 shader = ExtResource("2_njf8n")
 shader_parameter/amount = 5.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_rfy41"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jfmor"]
+emission_shape_offset = Vector3(0, 9.97, 0)
+emission_shape = 3
+emission_box_extents = Vector3(50, 1, 50)
+direction = Vector3(0, -1, 0)
+spread = 5.0
+scale_max = 2.0
+turbulence_enabled = true
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.01
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+collision_use_scale = true
+
+[sub_resource type="Curve" id="Curve_f5a4y"]
+max_value = 0.1
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.345708, 0.0252414), 0.0, 0.0, 0, 0, Vector2(0.533643, 0.0149693), -0.196769, -0.196769, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmpx4"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.578648, 0.678315, 0.714314, 1)
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_vab65"]
+material = SubResource("StandardMaterial3D_jmpx4")
+curve = SubResource("Curve_f5a4y")
 
 [node name="Player" type="Node3D"]
 
@@ -46,7 +69,6 @@ shape = SubResource("CapsuleShape3D_vuo1a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
-environment = SubResource("Environment_ja8p1")
 script = ExtResource("2_aidtc")
 
 [node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/Head/Camera3D"]
@@ -113,3 +135,14 @@ script = ExtResource("7_0ve20")
 [node name="Firecrackers" type="Node3D" parent="CharacterBody3D"]
 script = ExtResource("5_03g3i")
 launch_force = 20.0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="CharacterBody3D"]
+transform = Transform3D(0.468916, 0, 0, 0, 0.468916, 0, 0, 0, 0.468916, 0, 11.3362, 0)
+amount = 100
+lifetime = 3.02
+speed_scale = 4.56
+randomness = 1.0
+visibility_aabb = AABB(-25.9176, -38.644, -25.8222, 51.501, 50.5578, 51.2515)
+trail_enabled = true
+process_material = SubResource("ParticleProcessMaterial_jfmor")
+draw_pass_1 = SubResource("RibbonTrailMesh_vab65")
