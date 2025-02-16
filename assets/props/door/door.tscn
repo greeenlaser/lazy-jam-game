@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://clqlxofkb5nd"]
+
+[ext_resource type="PackedScene" uid="uid://byqlihq5su0pw" path="res://assets/props/door/door.fbx" id="1_6yhfw"]
+[ext_resource type="Texture2D" uid="uid://0a3rkcq2xf1r" path="res://assets/props/door/door_handle_Base_color.png" id="2_yu8os"]
+[ext_resource type="Texture2D" uid="uid://cudxmqimyheac" path="res://assets/props/door/door_base_Base_color.png" id="3_tursb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umtns"]
+albedo_texture = ExtResource("2_yu8os")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e05u1"]
+albedo_texture = ExtResource("3_tursb")
+
+[node name="door" instance=ExtResource("1_6yhfw")]
+
+[node name="door" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_umtns")
+surface_material_override/1 = SubResource("StandardMaterial3D_e05u1")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqo72ghw2l4km"]
+
+[ext_resource type="PackedScene" uid="uid://b7sos2wmmwgi" path="res://assets/props/window/window.fbx" id="1_6qpuo"]
+[ext_resource type="Texture2D" uid="uid://dxsng636eo3th" path="res://assets/props/window/window_handle_Base_color.png" id="2_4xc4r"]
+[ext_resource type="Texture2D" uid="uid://coxxpj6mfju8f" path="res://assets/props/window/window_border_Base_color.png" id="3_i7ubs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uypbp"]
+albedo_texture = ExtResource("2_4xc4r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j2n7u"]
+albedo_texture = ExtResource("3_i7ubs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3c4gr"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.188235)
+
+[node name="window" instance=ExtResource("1_6qpuo")]
+
+[node name="window" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_uypbp")
+surface_material_override/1 = SubResource("StandardMaterial3D_j2n7u")
+surface_material_override/2 = SubResource("StandardMaterial3D_3c4gr")
