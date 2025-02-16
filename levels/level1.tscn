@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://redqw3tx4cum"]
+[gd_scene load_steps=41 format=3 uid="uid://redqw3tx4cum"]
 
 [ext_resource type="PackedScene" uid="uid://d2jqolg1mbp5c" path="res://assets/Player.tscn" id="1_akg7v"]
 [ext_resource type="PackedScene" uid="uid://clqlxofkb5nd" path="res://assets/props/door/door.tscn" id="2_0k6sh"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dwautdutm3gqf" path="res://assets/props/ground_hill/ground_hill.tscn" id="3_oi1yo"]
 [ext_resource type="PackedScene" uid="uid://dqo72ghw2l4km" path="res://assets/props/window/window.tscn" id="4_lqr77"]
 [ext_resource type="PackedScene" uid="uid://dvxclsytq27aa" path="res://assets/props/ground_flat_basic/ground_flat_basic.tscn" id="5_7tu0k"]
+[ext_resource type="PackedScene" uid="uid://bmn4a6qf1p8xj" path="res://assets/props/table/table.tscn" id="5_keqnq"]
+[ext_resource type="PackedScene" uid="uid://6f377ylwktko" path="res://assets/props/firecracker/firecracker.tscn" id="6_eqoyg"]
+[ext_resource type="PackedScene" uid="uid://bue4cmx0u83nm" path="res://assets/props/radio/radio.tscn" id="7_mcrms"]
 [ext_resource type="PackedScene" uid="uid://kftlamdcfenm" path="res://assets/props/tree_flat/tree_flat.tscn" id="8_a0ls4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2i1fn"]
@@ -66,6 +69,12 @@ size = Vector3(0.248108, 1.08823, 9.31771)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ssev4"]
 size = Vector3(0.248108, 1.08823, 4.77413)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_skh03"]
+size = Vector3(2.59955, 0.915283, 1.06433)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_flkpt"]
+size = Vector3(0.208923, 0.0398102, 0.206131)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ujmf"]
 
@@ -300,6 +309,29 @@ shape = SubResource("BoxShape3D_75qon")
 [node name="tower_stairs_guardrails_2" type="CollisionShape3D" parent="firewatch_tower/collsion"]
 transform = Transform3D(0.994293, -0.0213918, -0.104517, -0.0591692, 0.704627, -0.707107, 0.0887718, 0.709255, 0.69934, -4.41397, 5.01757, 0.372688)
 shape = SubResource("BoxShape3D_3f1pq")
+
+[node name="table" type="StaticBody3D" parent="firewatch_tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.2096, 2.2917)
+
+[node name="table" parent="firewatch_tower/table" instance=ExtResource("5_keqnq")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="firewatch_tower/table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000687599, 0.460083, -0.00250244)
+shape = SubResource("BoxShape3D_skh03")
+
+[node name="firecracker" type="StaticBody3D" parent="firewatch_tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.1914, 1.94883)
+
+[node name="firecracker" parent="firewatch_tower/firecracker" instance=ExtResource("6_eqoyg")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="firewatch_tower/firecracker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000640869, 0.0038681, 0.00749969)
+shape = SubResource("BoxShape3D_flkpt")
+
+[node name="radio" type="StaticBody3D" parent="firewatch_tower"]
+transform = Transform3D(-0.729387, 0, 0.684102, 0, 1, 0, -0.684102, 0, -0.729387, -0.971497, 16.1272, 2.51267)
+
+[node name="radio" parent="firewatch_tower/radio" instance=ExtResource("7_mcrms")]
 
 [node name="ground_flat" type="Node" parent="."]
 

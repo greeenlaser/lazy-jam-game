@@ -1,0 +1,27 @@
+[gd_scene load_steps=10 format=3 uid="uid://bue4cmx0u83nm"]
+
+[ext_resource type="PackedScene" uid="uid://co71olb57tfhd" path="res://assets/props/radio/radio.fbx" id="1_bkp7x"]
+[ext_resource type="Texture2D" uid="uid://fyq82lkqcsxi" path="res://assets/props/radio/radio_buttons_Base_color.png" id="2_v56av"]
+[ext_resource type="Texture2D" uid="uid://bnqrv8euujx5c" path="res://assets/props/radio/radio_base_Base_color.png" id="3_t0736"]
+[ext_resource type="Texture2D" uid="uid://cswrv23k2eyn1" path="res://assets/props/radio/radio_antenna_Base_color.png" id="4_chhmj"]
+[ext_resource type="Texture2D" uid="uid://bmvhxdb36fljn" path="res://assets/props/radio/radio_speaker_Base_color.png" id="5_hpk3g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh1dq"]
+albedo_texture = ExtResource("2_v56av")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ua5h"]
+albedo_texture = ExtResource("3_t0736")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dolqi"]
+albedo_texture = ExtResource("4_chhmj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypj64"]
+albedo_texture = ExtResource("5_hpk3g")
+
+[node name="radio" instance=ExtResource("1_bkp7x")]
+
+[node name="radio" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_oh1dq")
+surface_material_override/1 = SubResource("StandardMaterial3D_0ua5h")
+surface_material_override/2 = SubResource("StandardMaterial3D_dolqi")
+surface_material_override/3 = SubResource("StandardMaterial3D_ypj64")

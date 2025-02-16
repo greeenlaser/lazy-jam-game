@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://6f377ylwktko"]
+
+[ext_resource type="PackedScene" uid="uid://bu75lc0xyfia4" path="res://assets/props/firecracker/firecracker.fbx" id="1_60y8h"]
+[ext_resource type="Texture2D" uid="uid://b20bslpku86iv" path="res://assets/props/firecracker/firecracker_red_Base_color.png" id="2_oleom"]
+[ext_resource type="Texture2D" uid="uid://b4fmmmdjc22vo" path="res://assets/props/firecracker/firecracker_white_Base_color.png" id="3_oacwk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oax72"]
+albedo_texture = ExtResource("2_oleom")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5h17"]
+albedo_texture = ExtResource("3_oacwk")
+
+[node name="firecracker" instance=ExtResource("1_60y8h")]
+
+[node name="firecracker" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_oax72")
+surface_material_override/1 = SubResource("StandardMaterial3D_c5h17")
