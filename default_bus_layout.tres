@@ -1,0 +1,18 @@
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://bhryy13nypv01"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_ejwkg"]
+resource_name = "Reverb"
+room_size = 0.17
+damping = 0.76
+dry = 0.9
+wet = 0.05
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_ss8ro"]
+resource_name = "Distortion"
+drive = 0.1
+
+[resource]
+bus/0/effect/0/effect = SubResource("AudioEffectReverb_ejwkg")
+bus/0/effect/0/enabled = true
+bus/0/effect/1/effect = SubResource("AudioEffectDistortion_ss8ro")
+bus/0/effect/1/enabled = true

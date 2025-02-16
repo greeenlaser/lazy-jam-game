@@ -162,7 +162,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.482193, -0.0263672, -0.0002
 shape = SubResource("BoxShape3D_x8ifj")
 
 [node name="window4" type="StaticBody3D" parent="firewatch_tower/windows"]
-transform = Transform3D(-0.459905, 0, 0.887968, 0, 1, 0, -0.887968, 0, -0.459905, -1.55503, 16.7484, 9.66685)
+transform = Transform3D(-0.882102, 0, 0.471058, 0, 1, 0, -0.471058, 0, -0.882102, -1.55503, 16.7484, 9.66685)
 
 [node name="window" parent="firewatch_tower/windows/window4" instance=ExtResource("4_lqr77")]
 
