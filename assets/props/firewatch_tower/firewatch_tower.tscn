@@ -1,0 +1,32 @@
+[gd_scene load_steps=12 format=3 uid="uid://bm4nwrxou7fen"]
+
+[ext_resource type="PackedScene" uid="uid://clo8cmo47lk2n" path="res://assets/props/firewatch_tower/firewatch_tower.fbx" id="1_eavdo"]
+[ext_resource type="Texture2D" uid="uid://dcm20jbij4h7q" path="res://assets/props/firewatch_tower/tower_pillars_Base_color.png" id="2_h16yh"]
+[ext_resource type="Texture2D" uid="uid://dw5ntrv3eg0xe" path="res://assets/props/firewatch_tower/tower_stairs_Base_color.png" id="3_y1sqe"]
+[ext_resource type="Texture2D" uid="uid://d2xm4opcd8sik" path="res://assets/props/firewatch_tower/tower_top_floor_Base_color.png" id="4_myh77"]
+[ext_resource type="Texture2D" uid="uid://bbtremfxn14yp" path="res://assets/props/firewatch_tower/tower_top_walls_Base_color.png" id="5_y7tds"]
+[ext_resource type="Texture2D" uid="uid://opjqbb52xpv3" path="res://assets/props/firewatch_tower/tower_top_ceiling_Base_color.png" id="6_7atlo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnbg6"]
+albedo_texture = ExtResource("2_h16yh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7yt45"]
+albedo_texture = ExtResource("3_y1sqe")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hkfr"]
+albedo_texture = ExtResource("4_myh77")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ja8vi"]
+albedo_texture = ExtResource("5_y7tds")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc1p3"]
+albedo_texture = ExtResource("6_7atlo")
+
+[node name="firewatch_tower" instance=ExtResource("1_eavdo")]
+
+[node name="watchtower" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wnbg6")
+surface_material_override/1 = SubResource("StandardMaterial3D_7yt45")
+surface_material_override/2 = SubResource("StandardMaterial3D_7hkfr")
+surface_material_override/3 = SubResource("StandardMaterial3D_ja8vi")
+surface_material_override/4 = SubResource("StandardMaterial3D_dc1p3")

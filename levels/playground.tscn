@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d2jqolg1mbp5c" path="res://assets/Player.tscn" id="4_kt26h"]
 [ext_resource type="PackedScene" uid="uid://bvhcbquod6han" path="res://assets/Creature.tscn" id="6_m76sy"]
 [ext_resource type="Script" path="res://scripts/interactables/test_interactable.gd" id="7_auoac"]
-[ext_resource type="PackedScene" uid="uid://clo8cmo47lk2n" path="res://assets/props/firewatch_tower.fbx" id="7_rmnt6"]
+[ext_resource type="PackedScene" uid="uid://clo8cmo47lk2n" path="res://assets/props/firewatch_tower/firewatch_tower.fbx" id="7_rmnt6"]
 [ext_resource type="Script" path="res://scripts/interactables/firecracker.gd" id="8_hxt6c"]
 [ext_resource type="Script" path="res://scripts/interactables/key.gd" id="9_h1p2s"]
 
