@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://redqw3tx4cum"]
+[gd_scene load_steps=49 format=3 uid="uid://redqw3tx4cum"]
 
 [ext_resource type="PackedScene" uid="uid://d2jqolg1mbp5c" path="res://assets/Player.tscn" id="1_akg7v"]
 [ext_resource type="PackedScene" uid="uid://clqlxofkb5nd" path="res://assets/props/door/door.tscn" id="2_0k6sh"]
@@ -10,8 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://dvxclsytq27aa" path="res://assets/props/ground_flat_basic/ground_flat_basic.tscn" id="5_7tu0k"]
 [ext_resource type="PackedScene" uid="uid://bmn4a6qf1p8xj" path="res://assets/props/table/table.tscn" id="5_keqnq"]
 [ext_resource type="PackedScene" uid="uid://6f377ylwktko" path="res://assets/props/firecracker/firecracker.tscn" id="6_eqoyg"]
+[ext_resource type="Script" path="res://scripts/interactables/firecracker.gd" id="7_7j8sb"]
 [ext_resource type="PackedScene" uid="uid://bue4cmx0u83nm" path="res://assets/props/radio/radio.tscn" id="7_mcrms"]
 [ext_resource type="PackedScene" uid="uid://kftlamdcfenm" path="res://assets/props/tree_flat/tree_flat.tscn" id="8_a0ls4"]
+[ext_resource type="Script" path="res://scripts/interactables/radio.gd" id="8_h4k6x"]
+[ext_resource type="AudioStream" uid="uid://b3t2a07lq2dds" path="res://sounds/radio/radio_on_1.wav" id="9_fire3"]
+[ext_resource type="AudioStream" uid="uid://b8uv38uax6poc" path="res://sounds/radio/radio_on_2.wav" id="10_qxun6"]
+[ext_resource type="AudioStream" uid="uid://66687kc6gg7k" path="res://sounds/radio/radiotrack.wav" id="11_mthl6"]
+[ext_resource type="AudioStream" uid="uid://rxwpxkuxvcxy" path="res://sounds/radio/radiochatter_loop.wav" id="12_wev2q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2i1fn"]
 size = Vector3(1.17627, 2.1947, 0.0400391)
@@ -75,6 +81,16 @@ size = Vector3(2.59955, 0.915283, 1.06433)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_flkpt"]
 size = Vector3(0.208923, 0.0398102, 0.206131)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qqwg0"]
+size = Vector3(0.417236, 0.457977, 0.0889282)
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_60d2x"]
+stream_count = 4
+stream_0 = ExtResource("9_fire3")
+stream_1 = ExtResource("10_qxun6")
+stream_2 = ExtResource("11_mthl6")
+stream_3 = ExtResource("12_wev2q")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ujmf"]
 
@@ -321,6 +337,7 @@ shape = SubResource("BoxShape3D_skh03")
 
 [node name="firecracker" type="StaticBody3D" parent="firewatch_tower"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.1914, 1.94883)
+script = ExtResource("7_7j8sb")
 
 [node name="firecracker" parent="firewatch_tower/firecracker" instance=ExtResource("6_eqoyg")]
 
@@ -330,8 +347,21 @@ shape = SubResource("BoxShape3D_flkpt")
 
 [node name="radio" type="StaticBody3D" parent="firewatch_tower"]
 transform = Transform3D(-0.729387, 0, 0.684102, 0, 1, 0, -0.684102, 0, -0.729387, -0.971497, 16.1272, 2.51267)
+script = ExtResource("8_h4k6x")
 
 [node name="radio" parent="firewatch_tower/radio" instance=ExtResource("7_mcrms")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="firewatch_tower/radio"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -0.00378323, 0.232346, -0.0164471)
+shape = SubResource("BoxShape3D_qqwg0")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="firewatch_tower/radio"]
+stream = SubResource("AudioStreamPlaylist_60d2x")
+volume_db = 2.723
+unit_size = 1.3
+max_db = 6.0
+autoplay = true
+max_distance = 10.0
 
 [node name="ground_flat" type="Node" parent="."]
 

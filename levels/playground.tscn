@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://fq6diq7hgid2"]
+[gd_scene load_steps=53 format=4 uid="uid://fq6diq7hgid2"]
 
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_q6qlh"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="2_i5vyx"]
@@ -85,21 +85,6 @@ points = PackedVector3Array(49, 8, -41, 49, 0, -41, 51, 0, -41, 51, 8, -41, 49, 
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b5xoh"]
 points = PackedVector3Array(38, 8, -41, 38, 0, -41, 40, 0, -41, 40, 8, -41, 38, 8, -39, 38, 0, -39, 40, 0, -39, 40, 8, -39)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_55twt"]
-render_priority = 0
-shader = ExtResource("3_lv7uv")
-shader_parameter/uv1_scale = Vector3(1, 1, 1)
-shader_parameter/uv1_offset = null
-shader_parameter/uv2_scale = Vector3(1, 1, 1)
-shader_parameter/uv2_offset = null
-shader_parameter/amount = 40.0
-shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/point_size = null
-shader_parameter/roughness = null
-shader_parameter/metallic_texture_channel = null
-shader_parameter/specular = null
-shader_parameter/metallic = null
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y3o1e"]
 size = Vector3(1.94275, 0.395508, 12.6285)
@@ -246,9 +231,6 @@ shape = SubResource("ConvexPolygonShape3D_b5xoh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.253, 0, 0.785)
 
 [node name="firewatch_tower_v1" parent="Map/firewatch_tower_v1" instance=ExtResource("7_rmnt6")]
-
-[node name="Cube_022" parent="Map/firewatch_tower_v1/firewatch_tower_v1" index="0"]
-material_override = SubResource("ShaderMaterial_55twt")
 
 [node name="tower_stairs_lower" type="CollisionShape3D" parent="Map/firewatch_tower_v1"]
 transform = Transform3D(0.993169, -0.0825181, -0.0825037, 0, 0.707045, -0.707168, 0.116688, 0.702337, 0.702215, -5.2044, 4.18433, 0.673369)

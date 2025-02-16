@@ -8,7 +8,7 @@ extends Node3D
 var firecrackers: int = 0
 
 func add_firecracker():
-	firecrackers += 1
+	firecrackers += 3-firecrackers
 	Signals.GetFirecrackerCount.emit(firecrackers)	
 
 func _ready():

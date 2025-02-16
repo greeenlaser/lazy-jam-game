@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bggm5ytudv0ff"
+path="res://.godot/imported/abandoned_town_sound_2.wav-5457936daecd4be7b69c594d97157958.sample"
+
+[deps]
+
+source_file="res://sounds/specific_ambience/Abandoned Town/abandoned_town_sound_2.wav"
+dest_files=["res://.godot/imported/abandoned_town_sound_2.wav-5457936daecd4be7b69c594d97157958.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
